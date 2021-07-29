@@ -21,3 +21,43 @@ document.getElementById("output").innerHTML=row
 document.getElementById("number1").value="";
 document.getElementById("number2").value="";
 }
+questionturn="player1"
+answerturn="player2"
+function check()
+{
+answer=document.getElementById("checkbox").value;
+if (answer==actualanswer)
+{
+if (answerturn=="player1")
+{
+p1score=p1score+1;
+document.getElementById("player1score").innerHTML=p1score
+}
+else
+{
+p2score=p2score+1;
+document.getElementById("player2score").innerHTML=p2score
+}
+}
+if (questionturn=="player1")
+{
+questionturn="player2"
+document.getElementById("playerquestion").innerHTML="questionturn "+ p2;
+}
+else 
+{
+questionturn="player1"
+document.getElementById("playerquestion").innerHTML="questionturn "+ p1;
+}
+if (answerturn=="player1")
+{
+answerturn="player2"; 
+document.getElementById("playeranswer").innerHTML="answerturn "+ p2;  
+}
+else
+{
+answerturn="player1"; 
+document.getElementById("playeranswer").innerHTML="answerturn "+ p1;  
+}
+document.getElementById("output").innerHTML="";
+}
